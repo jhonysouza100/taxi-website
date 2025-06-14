@@ -1,0 +1,89 @@
+{
+  "site": {
+    "title": "Taxi Puerto Iguazú",
+    "description": "Servicio de taxi confiable en Puerto Iguazú - Cataratas, Brasil, Paraguay y más destinos"
+  },
+  "hero": {
+    "title": "¡Bienvenido a Puerto Iguazú!",
+    "subtitle": "Selecciona tu vehículo",
+    "searchPlaceholder": "¿A dónde vamos?"
+  },
+  "services": [
+    {
+      "id": "taxi",
+      "name": "Taxi",
+      "icon": "🚗"
+    },
+    {
+      "id": "moto",
+      "name": "Moto",
+      "icon": "🏍️"
+    },
+    {
+      "id": "reserve",
+      "name": "Reservar",
+      "icon": "📅"
+    },
+    {
+      "id": "instant",
+      "name": "Inmediato",
+      "icon": "⚡"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Carlos Mendoza",
+      "rating": 98,
+      "experience": "Viaje Confortable",
+      "price": 2500,
+      "currency": "ARS",
+      "vehicle": "Toyota Corolla",
+      "image": "/placeholder.svg?height=200&width=300",
+      "specialties": ["Cataratas del Iguazú", "Aeropuerto", "Brasil"]
+    },
+    {
+      "id": 2,
+      "name": "María González",
+      "rating": 95,
+      "experience": "Servicio Premium",
+      "price": 3200,
+      "currency": "ARS",
+      "vehicle": "Chevrolet Cruze",
+      "image": "/placeholder.svg?height=200&width=300",
+      "specialties": ["San Ignacio", "Paraguay", "Saltos del Moconá"]
+    },
+    {
+      "id": 3,
+      "name": "Roberto Silva",
+      "rating": 97,
+      "experience": "Guía Local",
+      "price": 2800,
+      "currency": "ARS",
+      "vehicle": "Volkswagen Vento",
+      "image": "/placeholder.svg?height=200&width=300",
+      "specialties": ["Tours", "Hito Tres Fronteras", "Ciudad del Este"]
+    }
+  ],
+  "destinations": [
+    "Cataratas del Iguazú",
+    "Aeropuerto Internacional",
+    "San Ignacio - Ruinas Jesuíticas",
+    "Saltos del Moconá",
+    "Foz do Iguaçu (Brasil)",
+    "Ciudad del Este (Paraguay)",
+    "Hito Tres Fronteras",
+    "Puerto Libertad",
+    "Wanda - Minas de Piedras Preciosas"
+  ],
+  "features": [
+    "Servicio 24/7",
+    "Conductores experimentados",
+    "Vehículos en excelente estado",
+    "Tarifas transparentes",
+    "Atención personalizada",
+    "Conocimiento de la zona",
+    "Servicios internacionales",
+    "Puntualidad garantizada"
+  ]
+}

@@ -6,7 +6,7 @@ const navLinks = [
   { href: "#destination", label: "Destinos" },
   { href: "#testimonial", label: "Reseñas" },
   { href: "#services", label: "Servicios" },
-  { href: "#join", label: "Contacto" },
+  { href: "#join", label: "Reservar" },
 ]
 
 export default function Header() {

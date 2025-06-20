@@ -459,48 +459,93 @@ img {
   right: 1.25rem;
 }
 
-/*=============== GALLERY ===============*/
-.gallery_container {
-  grid-template-columns: 300px;
+/*=============== SERVICES ===============*/
+.services_container {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
 }
-.gallery_card {
-  position: relative;
+
+.services_card {
+  background-color: var(--white-color);
+  padding: 3rem 2rem;
   border-radius: 1.5rem;
-  overflow: hidden;
-  aspect-ratio: 3/2;
+  text-align: center;
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+  border: 1px solid var(--container-color);
 }
-.gallery_shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 70%, hsla(0, 0%, 0%, 7) 100%);
+
+.services_card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 12px 40px hsla(0, 0%, 0%, 0.15);
 }
-.gallery_img {
-  transition: transform .4s;
+
+.services_icon {
+  font-size: 3rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.gallery_data {
-  position: absolute;
-  left: 1.25rem;
-  bottom: 1rem;
-  color: var(--white-color);
-}
-.gallery_subtitle {
-  font-size: var(--h1-font-size);
-  font-family: var(--second-font);
-}
-.gallery_title {
+
+.services_title {
   font-size: var(--h2-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
 }
-.gallery_card:hover .gallery_img {
-  transform: scale(1.2);
+
+.services_description {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: var(--normal-font-size);
+}
+
+/* Responsive adjustments for services */
+@media screen and (max-width: 320px) {
+  .services_container {
+    grid-template-columns: 280px;
+    justify-content: center;
+  }
+  .services_card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .services_container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .services_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .services_container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .services_card {
+    padding: 3.5rem 2.5rem;
+  }
+  .services_title {
+    margin-bottom: 1.5rem;
+  }
+  .services_description {
+    margin-bottom: 0;
+  }
 }
 
 /*=============== JOIN ===============*/
 .join_container {
-  row-gap: 3rem;
   padding-bottom: 3rem;
 }
 .join_data {
@@ -511,22 +556,6 @@ img {
 }
 .join_description {
   margin-bottom: 2rem;
-}
-.join_form {
-  display: grid;
-  row-gap: 1rem;
-}
-.join_input {
-  width: 100%;
-  background-color: var(--container-color);
-  color: var(--text-color);
-  padding: 1.5rem 1rem;
-  border-radius: .5rem;
-  transition: background-color .4s;
-}
-.join_button {
-  padding-block: 1.25rem;
-  cursor: pointer;
 }
 .join_img {
   width: 300px;
@@ -584,6 +613,10 @@ img {
   text-align: center;
   font-size: var(--small-font-size);
 }
+.footer_author {
+  text-decoration: none;
+  color: rgb(29, 104, 179);
+}
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
@@ -631,8 +664,7 @@ img {
   .home_title {
     font-size: 2.5rem;
   }
-  .destination_container,
-  .gallery_container {
+  .destination_container {
     grid-template-columns: 250px;
   }
   .footer_content {
@@ -667,8 +699,7 @@ img {
 
 /* For large devices (lg) */
 @media screen and (min-width: 768px) {
-  .destination_container,
-  .gallery_container {
+  .destination_container {
     grid-template-columns: repeat(2, 300px);
   }
   .footer_content {
@@ -782,17 +813,6 @@ img {
   }
   .testimonial .swiper-button-next {
     right: 3rem;
-  }
-  .gallery_container {
-    grid-template-columns: repeat(2, 500px);
-    gap: 2rem;
-  }
-  .gallery_data {
-    left: 2rem;
-    bottom: 2rem;
-  }
-  .gallery_title {
-    font-size: var(--h1-font-size);
   }
   .join_container {
     grid-template-columns: 360px 500px;

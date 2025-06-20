@@ -95,9 +95,9 @@ export default function useDOMHydration() {
     sr.reveal(`.home_title`, { delay: 600 })
     sr.reveal(`.home_description`, { delay: 900 })
     sr.reveal(`.home_data .button`, { delay: 1200 })
-    sr.reveal(`.destination_card, .gallery_card`, { interval: 100 })
+    sr.reveal(`.destination_card, .services_card`, { interval: 100 })
     sr.reveal(`.join_data`, { origin: "left" })
-    sr.reveal(`.join_img`, { origin: "right" })
+    sr.reveal(`.booking-widget-container`, { origin: "right" })
 
     // Cleanup function
     return () => {

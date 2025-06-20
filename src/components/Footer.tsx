@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="footer_container container grid">
         <a href="#" className="footer_logo">
           <Image height={26} width={26} src="/logo.svg" alt="Logo image" className="footer_logo_img" />
-          <span>GoTravel</span>
+          <span>Traslados Portillo</span>
         </a>
         <div className="footer_content grid">
           {footerLinkGroups.map((group) => (
@@ -85,7 +85,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <span className="footer_copy">&#169; All Rights Reserved By JhonySouza</span>
+      <span className="footer_copy">
+        &#169; All Rights Reserved By <a href="https://jhonysouza100.site" about="_blank" className="footer_author">JhonySouza</a>
+      </span>
     </footer>
   )
 }

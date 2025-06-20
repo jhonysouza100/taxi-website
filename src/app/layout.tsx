@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Montserrat } from "next/font/google";
 import "./globals.css";
+import "../components/widgets/styles.css";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

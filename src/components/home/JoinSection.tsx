@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { RiArrowRightLine } from "@remixicon/react"
+// import Image from "next/image"
+import BookingWidget from "../widgets/BookingWidget"
 
 export default function JoinSection() {
   return (
@@ -7,18 +7,12 @@ export default function JoinSection() {
       <div className="join_container container grid">
         <div className="join_data">
           <h2 className="section_title">
-            Your Journey <br /> Starts Here
+            Comienza tu <br /> Viaje Aqui
           </h2>
-          <p className="join_description">Get up to date with the latest travel and information from us.</p>
-          <form action="" className="join_form">
-            <input type="email" placeholder="Enter your email" className="join_input" />
-            <button type="submit" className="join_button button">
-              Join our newsletter
-              <RiArrowRightLine />
-            </button>
-          </form>
+            <p className="join_description">Completa el este formulario para reservar tu taxi de manera rápida y sencilla.</p>
         </div>
-        <Image height={700} width={700} src="/join-img.png" quality={100} alt="Join image" className="join_img" />
+        <BookingWidget />
+        {/* <Image height={700} width={700} src="/images/gallery-img-4.jpg" quality={100} alt="Join image" className="join_img" /> */}
       </div>
     </section>
   )

@@ -204,7 +204,11 @@ img {
   .show-menu {
     top: 0;
   }
+  .home_swiper {
+    order: -1
+  }
 }
+
 .nav_link {
   position: relative;
   color: var(--title-color);
@@ -283,6 +287,9 @@ img {
 .home_description {
   margin-bottom: 2rem;
 }
+.home_button {
+  margin-top: 1rem;
+}
 .home_swiper {
   max-width: 320px;
   border-radius: 1.5rem;
@@ -312,6 +319,9 @@ img {
 }
 .home_swiper .swiper-button-next {
   right: 1.25rem;
+}
+.home_reservation {
+  display: inline-flex;
 }
 
 /*=============== BUTTON ===============*/

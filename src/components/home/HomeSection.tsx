@@ -28,7 +28,10 @@ export default function HomeSection() {
           <p className="home_description">
             Descubrí la magia de la región con nosotros, en un viaje donde cada traslado es seguro y lleno de experiencias únicas.
           </p>
-          <a href="#destination" className="button button_opa-30">
+          <div className="home_reservation">
+            <BookingWidgetHome />
+          </div>
+          <a href="#destination" className="home_button button button_opa-30">
             Selecciona tu destino
             <RiArrowRightLine />
           </a>
@@ -69,7 +72,7 @@ export default function HomeSection() {
           </div>
         </Swiper>
 
-      <BookingWidgetHome />
+      
       
       </div>
     </section>

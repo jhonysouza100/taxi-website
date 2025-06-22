@@ -1,8 +1,8 @@
 /*=============== BOOKING WIDGET HOME ===============*/
 .booking-widget-home-container {
-  width: 100%;
+  margin-inline: auto;
   display: flex;
-  padding: 2rem 1rem;
+  /* padding: 2rem 1rem; */
   grid-column: 1 / -1;
   justify-content: center;
 }
@@ -15,12 +15,27 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: stretch;
-  justify-content: space-between;
   gap: 12px;
 }
-@media screen and (max-width: 720px) {
+
+.home-fields-container {
+  width: 100%;
+  display: flex;
+  column-gap: 1rem;
+}
+
+@media screen and (max-width: 1150px) {
   .booking-widget-home {
     flex-wrap: wrap;
+  }
+  .booking-widget-home-container {
+    width: min-content;
+  }
+  .location-container {
+    column-gap: 0;
+  }
+  .home-location-input {
+    max-width: 120px !important;
   }
 }
 
@@ -28,7 +43,6 @@
 .home-location-field {
   display: flex;
   flex-direction: column;
-  min-width: 180px;
   flex: 1;
 }
 
@@ -49,6 +63,7 @@
   cursor: pointer;
   transition: border-color 0.2s ease;
   min-height: 48px;
+  max-width: 160px;
 }
 
 .home-location-input:hover {
@@ -72,16 +87,16 @@
 
 /* Swap Button */
 .home-swap-btn {
-    color: var(--text-color);
-    cursor: pointer;
-    background-color: var(--white-color);
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
-    margin-top: 1rem;
-    transition: all .2s;
-    display: flex;
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  margin-top: 1rem;
+  transition: all .2s;
+  display: flex;
 }
 
 .home-swap-btn:hover {
@@ -101,8 +116,8 @@
   cursor: pointer;
   transition: border-color 0.2s ease;
   min-width: 120px;
-  flex: 1;
   gap: 8px;
+  flex: 1;
 }
 
 .home-date-input.departure {
@@ -144,14 +159,15 @@
 /* Passenger Section */
 .home-passenger-section {
   display: flex;
+  flex: 1;
   align-items: center;
-  gap: 8px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 8px 6px;
   background-color: var(--white-color);
   color: var(--text-color);
   flex-shrink: 0;
+  min-width: 120px;
 }
 
 .home-passenger-btn {
@@ -199,12 +215,14 @@
   color: var(--white-color);
   border: none;
   border-radius: 8px;
-  padding: 12px 24px;
+  padding: 8px 6px;
+  min-width: 120px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
   white-space: nowrap;
+  flex: 1;
   flex-shrink: 0;
 }
 

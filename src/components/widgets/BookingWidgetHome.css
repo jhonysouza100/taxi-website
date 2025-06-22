@@ -1,0 +1,208 @@
+/*=============== BOOKING WIDGET HOME ===============*/
+.booking-widget-home-container {
+  width: 100%;
+  display: flex;
+  padding: 2rem 1rem;
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+
+.booking-widget-home {
+  background-color: var(--white-color);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Location Fields */
+.home-location-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  flex: 1;
+}
+
+.home-location-label {
+  font-size: 12px;
+  color: var(--text-color);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.home-location-input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  min-height: 48px;
+}
+
+.home-location-input:hover {
+  border-color: #d1d5db;
+}
+
+.home-location-input svg {
+  color: var(--text-color);
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.home-location-text {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Swap Button */
+.home-swap-btn {
+    color: var(--text-color);
+    cursor: pointer;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    margin-top: 1rem;
+    transition: all .2s;
+    display: flex;
+}
+
+.home-swap-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Date Fields */
+.home-date-input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  min-width: 120px;
+  flex: 1;
+  gap: 8px;
+}
+
+.home-date-input.departure {
+  border-color: #ef4444;
+}
+
+.home-date-input.return {
+  border-color: #e5e7eb;
+}
+
+.home-date-input:hover {
+  border-color: #d1d5db;
+}
+
+.home-date-input.departure:hover {
+  border-color: #dc2626;
+}
+
+.home-date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-date-label {
+  font-size: 12px;
+  color: var(--text-color);
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.home-date-value {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Passenger Section */
+.home-passenger-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 6px;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  flex-shrink: 0;
+}
+
+.home-passenger-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-passenger-btn:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.home-passenger-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.home-passenger-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-color);
+}
+
+.home-passenger-count {
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Update Route Button */
+.home-update-route-btn {
+  background-color: #3b82f6;
+  color: var(--white-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.home-update-route-btn:hover {
+  background-color: #2563eb;
+}

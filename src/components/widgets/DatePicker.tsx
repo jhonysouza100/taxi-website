@@ -14,21 +14,21 @@ export default function DatePicker({ onSelect, onClose, title, selectedDate }: D
   const [currentDate, setCurrentDate] = useState(selectedDate || new Date())
 
   const monthNames = [
-    "JANUARY",
-    "FEBRUARY",
-    "MARCH",
-    "APRIL",
-    "MAY",
-    "JUNE",
-    "JULY",
-    "AUGUST",
-    "SEPTEMBER",
-    "OCTOBER",
-    "NOVEMBER",
-    "DECEMBER",
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE",
   ]
 
-  const dayNames = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+  const dayNames = ["Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"]
 
   const year = currentDate.getFullYear()
   const month = currentDate.getMonth()

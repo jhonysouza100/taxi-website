@@ -158,6 +158,7 @@ export default function DestinationSection() {
               width={700}
               src={dest.src}
               quality={100}
+              loading="lazy"
               alt={dest.alt}
               className="destination_img"
               sizes="(max-width: 425px) 75vw,(max-width: 768px) 45vw, (max-width: 1200px) 50vw, 45vw"
@@ -209,6 +210,7 @@ export default function DestinationSection() {
                 width={700}
                 src={dest.src}
                 quality={100}
+                loading="lazy"
                 alt={dest.alt}
                 className="destination_img"
                 sizes="(max-width: 425px) 75vw,(max-width: 768px) 45vw, (max-width: 1200px) 50vw, 45vw"

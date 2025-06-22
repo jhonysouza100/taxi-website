@@ -1,0 +1,8 @@
+const index = {
+  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+  PHONE_NUMBER: process.env.NEXT_PUBLIC_PHONE_NUMBER,
+  DEVELOPER_URL: process.env.NEXT_PUBLIC_DEVELOPER_URL,
+  SITE_VERIFICATION: process.env.NEXT_PUBLIC_SITE_VERIFICATION,
+}
+
+export default index;

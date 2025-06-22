@@ -30,7 +30,7 @@ export default function LocationPicker({ locations, onSelect, onClose, title }: 
             <RiSearchLine size={20} />
             <input
               type="text"
-              placeholder="Search locations..."
+              placeholder="Buscar..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />

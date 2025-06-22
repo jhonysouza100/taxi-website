@@ -12,7 +12,7 @@ const testimonials = [
     title: "Cataratas del Iguazú",
     description:
       "Me encantó visitar el país porque el paisaje es precioso. Los lugareños también me recibieron con alegría y sonrisas.",
-    profileImg: "/testimonial-profile-1.png",
+    profileImg: "/images/testimonial-profile-1.png",
     name: "Will",
     role: "Fotografo",
   },
@@ -20,7 +20,7 @@ const testimonials = [
     title: "Paseo de Compras",
     description:
       "Me encantó visitar el país porque el paisaje es precioso. Los lugareños también me recibieron con alegría y sonrisas.",
-    profileImg: "/testimonial-profile-2.png",
+    profileImg: "/images/testimonial-profile-2.png",
     name: "Rose",
     role: "Influencer",
   },
@@ -28,7 +28,7 @@ const testimonials = [
     title: "Aeropuerto",
     description:
       "Me encantó visitar el país porque el paisaje es precioso. Los lugareños también me recibieron con alegría y sonrisas.",
-    profileImg: "/testimonial-profile-3.png",
+    profileImg: "/images/testimonial-profile-3.png",
     name: "Gian",
     role: "Blogger",
   },
@@ -47,6 +47,7 @@ export default function TestimonialSection() {
             width={700}
             src="/images/testimonial-img.jpg"
             quality={100}
+            loading="lazy"
             alt="Testimonial image"
             className="testimonial_img"
             sizes="(max-width: 425px) 75vw,(max-width: 768px) 45vw, (max-width: 1200px) 50vw, 45vw"

@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules"
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/navigation"
+import BookingWidgetHome from "../widgets/BookingWidgetHome"
 
 const slides = [
   { src: "/images/gallery-img-1.jpg", label: "Home image 1" },
@@ -67,6 +68,9 @@ export default function HomeSection() {
             <RiArrowRightLine size={20} />
           </div>
         </Swiper>
+
+      <BookingWidgetHome />
+      
       </div>
     </section>
   )

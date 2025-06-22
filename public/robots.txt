@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.iguazutrasladosgg.com
+
+# Sitemaps
+Sitemap: https://www.iguazutrasladosgg.com/sitemap.xml

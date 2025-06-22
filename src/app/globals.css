@@ -557,11 +557,6 @@ img {
 .join_description {
   margin-bottom: 2rem;
 }
-.join_img {
-  width: 300px;
-  border-radius: 1.5rem;
-  justify-self: center;
-}
 
 /*=============== FOOTER ===============*/
 .footer {
@@ -688,9 +683,6 @@ img {
   .join_container {
     grid-template-columns: 380px;
     justify-content: center;
-  }
-  .join_img {
-    width: 380px;
   }
   .footer_content {
     grid-template-columns: repeat(3, max-content);
@@ -828,9 +820,6 @@ img {
   }
   .join_description {
     margin-bottom: 3rem;
-  }
-  .join_img {
-    width: 500px;
   }
   .footer {
     padding-bottom: 4.5rem;

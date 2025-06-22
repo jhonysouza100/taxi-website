@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiMapPin2Fill, RiArrowUpDownLine, RiUser3Line, RiCalendarLine, RiTimeLine } from "@remixicon/react"
+import { RiMapPin2Fill, RiArrowLeftRightLine, RiUser3Line, RiCalendarLine, RiTimeLine } from "@remixicon/react"
 import DatePicker from "./DatePicker"
 import LocationPicker from "./LocationPicker"
 import TimePicker from "./TimePicker"
@@ -16,7 +16,7 @@ interface BookingData {
   passengers: number
 }
 
-export default function BookingWidget() {
+export default function BookingWidgetHome() {
   const [bookingData, setBookingData] = useState<BookingData>({
     from: "Seleccionar origen",
     to: "Seleccionar destino",
@@ -25,7 +25,7 @@ export default function BookingWidget() {
     passengers: 1,
   })
 
-  const [showDatePicker, setShowDatePicker] = useState<"departure" | "return" | null>(null)
+  const [showDatePicker, setShowDatePicker] = useState<"departure" | null>(null)
   const [showLocationPicker, setShowLocationPicker] = useState<"from" | "to" | null>(null)
   const [showTimePicker, setShowTimePicker] = useState(false)
 
@@ -49,10 +49,10 @@ export default function BookingWidget() {
     setShowLocationPicker(null)
   }
 
-  const handleDateSelect = (date: Date, type: "departure" | "return") => {
+  const handleDateSelect = (date: Date) => {
     setBookingData((prev) => ({
       ...prev,
-      [type === "departure" ? "departureDate" : "returnDate"]: date,
+      departureDate: date,
     }))
     setShowDatePicker(null)
   }
@@ -75,7 +75,7 @@ export default function BookingWidget() {
   const formatDate = (date: Date | null) => {
     if (!date) return ""
     const day = date.getDate()
-    const month = date.toLocaleDateString("es-AR", { month: "short" })
+    const month = date.toLocaleDateString("en-US", { month: "short" })
     const suffix =
       day === 1 || day === 21 || day === 31
         ? "st"
@@ -84,8 +84,7 @@ export default function BookingWidget() {
           : day === 3 || day === 23
             ? "rd"
             : "th"
-    const formattedMonth = month.charAt(0).toUpperCase() + month.slice(1)
-    return `${day}${suffix} ${formattedMonth}`
+    return `${day}${suffix} ${month}`
   }
 
   const handleTimeSelect = (time: string) => {
@@ -104,7 +103,7 @@ export default function BookingWidget() {
       return
     }
 
-    const message = `🚖 *RESERVA DE TRASLADO*
+    const message = `🚖 *RESERVA DE TAXI*
 
 📍 *Origen:* ${from}
 📍 *Destino:* ${to}
@@ -118,81 +117,81 @@ ${config.SITE_URL}`
 
     const phoneNumber = config.PHONE_NUMBER
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
 
     window.open(whatsappUrl, "_blank")
   }
 
   return (
-    <div className="booking-widget-container">
-      <div className="booking-widget-card">
-        {/* Location Fields */}
-        <div className="location-fields">
-          <div className="location-field">
-            <label className="location-label">Desde</label>
-            <button className="location-input" onClick={() => setShowLocationPicker("from")}>
-              <RiMapPin2Fill size={16} className="location-icon" />
-              <span className="location-text">{bookingData.from || "Seleccionar origen"}</span>
-            </button>
-          </div>
-
-          <button className="swap-locations-btn" onClick={swapLocations}>
-            <RiArrowUpDownLine size={20} />
-          </button>
-
-          <div className="location-field">
-            <label className="location-label">Hasta</label>
-            <button className="location-input" onClick={() => setShowLocationPicker("to")}>
-              <RiMapPin2Fill size={16} className="location-icon" />
-              <span className="location-text">{bookingData.to || "Seleccionar destino"}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Date and Time Fields */}
-        <div className="date-time-fields">
-          <button className="date-input departure-date" onClick={() => setShowDatePicker("departure")}>
-            <RiCalendarLine size={20} />
-            <div className="date-content">
-              <span className="date-label">Fecha</span>
-              <span className="date-value">{formatDate(bookingData.departureDate) || "Seleccionar"}</span>
-            </div>
-          </button>
-
-          <button className="time-input" onClick={() => setShowTimePicker(true)}>
-            <RiTimeLine size={20} />
-            <div className="time-content">
-              <span className="time-label">Hora</span>
-              <span className="time-value">{bookingData.departureTime || "Seleccionar"}</span>
-            </div>
+    <div className="booking-widget-home-container">
+      <div className="booking-widget-home">
+        {/* From Location */}
+        <div className="home-location-field">
+          <label className="home-location-label">From</label>
+          <button className="home-location-input" onClick={() => setShowLocationPicker("from")}>
+            <RiMapPin2Fill size={16} className="home-location-icon" />
+            <span className="home-location-text">{bookingData.from}</span>
           </button>
         </div>
 
-        {/* Bottom Section */}
-        <div className="bottom-section">
-          <div className="passenger-controls">
-            <button
-              className="passenger-btn"
-              onClick={() => handlePassengerChange(false)}
-              disabled={bookingData.passengers <= 1}
-            >
-              -
-            </button>
+        {/* Swap Button */}
+        <button className="home-swap-btn" onClick={swapLocations}>
+          <RiArrowLeftRightLine size={20} />
+        </button>
+
+        {/* To Location */}
+        <div className="home-location-field">
+          <label className="home-location-label">To</label>
+          <button className="home-location-input" onClick={() => setShowLocationPicker("to")}>
+            <RiMapPin2Fill size={16} className="home-location-icon" />
+            <span className="home-location-text">{bookingData.to}</span>
+          </button>
+        </div>
+
+        {/* Departure Date */}
+        <button className="home-date-input departure" onClick={() => setShowDatePicker("departure")}>
+          <RiCalendarLine size={20} />
+          <div className="home-date-content">
+            <span className="home-date-label">Fecha</span>
+            <span className="home-date-value">{formatDate(bookingData.departureDate) || "Seleccionar"}</span>
+          </div>
+        </button>
+
+        {/* Return Date (Placeholder) */}
+        <button className="home-date-input return" onClick={() => setShowTimePicker(true)}>
+          <RiTimeLine size={20} />
+          <div className="home-date-content">
+            <span className="home-date-label">Hora</span>
+            <span className="home-date-value">{bookingData.departureTime || "Seleccionar"}</span>
+          </div>
+        </button>
+
+        {/* Passengers */}
+        <div className="home-passenger-section">
+          <button
+            className="home-passenger-btn"
+            onClick={() => handlePassengerChange(false)}
+            disabled={bookingData.passengers <= 1}
+          >
+            -
+          </button>
+          <div className="home-passenger-display">
             <RiUser3Line size={16} />
-            <span className="passenger-count">{bookingData.passengers}</span>
-            <button
-              className="passenger-btn"
-              onClick={() => handlePassengerChange(true)}
-              disabled={bookingData.passengers >= 8}
-            >
-              +
-            </button>
+            <span className="home-passenger-count">{bookingData.passengers}</span>
           </div>
-
-          <button className="update-route-button" onClick={sendWhatsAppMessage}>
-            Reservar
+          <button
+            className="home-passenger-btn"
+            onClick={() => handlePassengerChange(true)}
+            disabled={bookingData.passengers >= 8}
+          >
+            +
           </button>
         </div>
+
+        {/* Update Route Button */}
+        <button className="home-update-route-btn" onClick={sendWhatsAppMessage}>
+          Reservar
+        </button>
       </div>
 
       {/* Modals */}
@@ -207,7 +206,7 @@ ${config.SITE_URL}`
 
       {showDatePicker && (
         <DatePicker
-          onSelect={(date) => handleDateSelect(date, showDatePicker)}
+          onSelect={handleDateSelect}
           onClose={() => setShowDatePicker(null)}
           title="Fecha de salida"
           selectedDate={bookingData.departureDate}

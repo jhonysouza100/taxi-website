@@ -1,6 +1,8 @@
 import Image from "next/image"
 import { RiFacebookCircleFill, RiInstagramFill, RiTwitterXFill } from "@remixicon/react"
 
+import config from "@/config"
+
 const footerLinkGroups = [
   {
     title: "About",
@@ -86,7 +88,7 @@ export default function Footer() {
         </div>
       </div>
       <span className="footer_copy">
-        &#169; All Rights Reserved By <a href="https://jhonysouza100.site" about="_blank" className="footer_author">JhonySouza</a>
+        &#169; All Rights Reserved By <a href={config.DEVELOPER_URL} about="_blank" className="footer_author">JhonySouza</a>
       </span>
     </footer>
   )

@@ -18,6 +18,11 @@
   justify-content: space-between;
   gap: 12px;
 }
+@media screen and (max-width: 720px) {
+  .booking-widget-home {
+    flex-wrap: wrap;
+  }
+}
 
 /* Location Fields */
 .home-location-field {

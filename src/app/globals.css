@@ -204,9 +204,6 @@ img {
   .show-menu {
     top: 0;
   }
-  .home_swiper {
-    order: -1
-  }
 }
 
 .nav_link {
@@ -249,80 +246,7 @@ img {
 }
 
 /*=============== HOME ===============*/
-.home {
-  position: relative;
-}
-.home_bg,
-.home_blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.home_bg {
-  object-fit: cover;
-  object-position: center;
-}
-.home_blur {
-  background-color: var(--opacity-color-20);
-  backdrop-filter: blur(40px);
-  transition: background-color .4s;
-}
-.home_container {
-  position: relative;
-  padding-block: 2rem 3rem;
-  row-gap: 3rem;
-}
-.home_data {
-  text-align: center;
-  color: var(--white-color);
-}
-.home_title {
-  font-size: var(--biggest-font-size);
-  font-weight: var(--font-bold);
-  line-height: 110%;
-  margin-bottom: 1rem;
-}
-.home_description {
-  margin-bottom: 2rem;
-}
-.home_button {
-  margin-top: 1rem;
-}
-.home_swiper {
-  max-width: 320px;
-  border-radius: 1.5rem;
-  aspect-ratio: 3/2;
-}
 
-/* Swiper class */
-.home_swiper .swiper-button-prev::after,
-.home_swiper .swiper-button-next::after {
-  content: "";
-}
-.home_swiper :is(.swiper-button-prev, .swiper-button-next) {
-  color: var(--white-color);
-  font-size: 1.5rem;
-  background-color: var(--opacity-color-30);
-  backdrop-filter: blur(24px);
-  width: 2rem;
-  height: 2rem;
-  border-radius: .25rem;
-  top: initial;
-  bottom: 1.25rem;
-  transition: background-color .4s;
-}
-.home_swiper .swiper-button-prev {
-  left: initial;
-  right: 4rem;
-}
-.home_swiper .swiper-button-next {
-  right: 1.25rem;
-}
-.home_reservation {
-  display: inline-flex;
-}
 
 /*=============== BUTTON ===============*/
 .button {
@@ -666,9 +590,6 @@ img {
   .container {
     margin-inline: 1rem;
   }
-  .home_title {
-    font-size: 2.5rem;
-  }
   .destination_container {
     grid-template-columns: 250px;
   }
@@ -679,11 +600,6 @@ img {
 
 /* For medium (md) devices */
 @media screen and (min-width: 576px) {
-  .home_container {
-    grid-template-columns: 400px;
-    justify-content: center;
-  }
-  .home_swiper,
   .testimonial_swiper {
     max-width: 400px;
   }
@@ -747,35 +663,6 @@ img {
   }
   .bg-header .nav_link::after {
     background-color: var(--title-color);
-  }
-  .home_container {
-    grid-template-columns: 520px 700px;
-    align-items: center;
-    padding-block: 6rem 9rem;
-    gap: 0;
-  }
-  .home_data {
-    text-align: initial;
-    transform: translateX(3rem);
-    z-index: 5;
-  }
-  .home_description {
-    padding-right: 6rem;
-    margin-bottom: 4rem;
-  }
-  .home_swiper {
-    max-width: 700px;
-    transform: translateX(-3rem);
-  }
-  .home .swiper-button-next,
-  .home .swiper-button-prev {
-    bottom: 2rem;
-  }
-  .home .swiper-button-prev {
-    right: 4.5rem;
-  }
-  .home .swiper-button-next {
-    right: 2rem;
   }
   .destination_container {
     grid-template-columns: repeat(3, 340px);

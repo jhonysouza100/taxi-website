@@ -344,6 +344,7 @@
 /* Location Picker Styles */
 .search-section {
   border-bottom: 1px solid var(--container-color);
+  padding: 1rem;
 }
 
 .search-input {
@@ -356,7 +357,7 @@
   background-color: var(--white-color);
 }
 
-.search-input input {
+.search-input {
   flex: 1;
   border: none;
   outline: none;

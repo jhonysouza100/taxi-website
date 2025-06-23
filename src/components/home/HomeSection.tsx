@@ -1,79 +1,118 @@
 import Image from "next/image"
-import { RiArrowRightLine, RiArrowLeftLine } from "@remixicon/react"
+import gsap from "gsap"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Autoplay } from "swiper/modules"
+import { Pagination, EffectFade } from "swiper/modules"
+import { RiArrowRightLine } from "@remixicon/react"
+import { useEffect, useRef } from "react"
 
 // Import Swiper styles
 import "swiper/css"
-import "swiper/css/navigation"
-import BookingWidgetHome from "../widgets/BookingWidgetHome"
+import "swiper/css/pagination"
+import "swiper/css/effect-fade"
 
-const slides = [
-  { src: "/images/gallery-img-1.jpg", label: "Home image 1" },
-  { src: "/images/gallery-img-2.jpg", label: "Home image 2" },
-  { src: "/images/gallery-img-3.jpg", label: "Home image 3" },
-  { src: "/images/gallery-img-4.jpg", label: "Home image 4" },
+import "@/components/home/HomeSection.css"
+
+const carData = [
+  {
+    id: 1,
+    color: "orange",
+    subtitle: "Let's",
+    title: "RACE",
+    specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
+    image: "/images/car-1.png",
+  },
+  {
+    id: 2,
+    color: "green",
+    subtitle: "Let's",
+    title: "RACE",
+    specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
+    image: "/images/car-2.png",
+  },
+  {
+    id: 3,
+    color: "blue",
+    subtitle: "Let's",
+    title: "RACE",
+    specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
+    image: "/images/car-3.png",
+  },
 ]
 
 export default function HomeSection() {
+  const homeRef = useRef<HTMLElement>(null)
+  
+    // useEffect(() => {
+    //   // GSAP animations
+    //   const tl = gsap.timeline()
+  
+    //   tl.from(".home_panel-1", { y: -1000, duration: 2 })
+    //     .from(".home_panel-2", { y: 1000, duration: 2 }, 0)
+    //     .from(".home_image", { x: 1000, duration: 2 }, 0)
+    //     .from(".home_titles", { y: 100, opacity: 0, delay: 0.5 }, 2)
+    //     .from(".home_title", { y: 100, opacity: 0, delay: 0.1 }, 2.1)
+  
+    //   return () => {
+    //     tl.kill()
+    //   }
+    // }, [])
   return (
-    <section className="home section" id="home">
+    <section className="home" id="home" ref={homeRef}>
       <Image height={700} width={700} src="/images/home-bg.jpg" alt="Home image" className="home_bg" />
       <div className="home_blur"></div>
-      <div className="home_container container grid">
-        <div className="home_data">
-          <h1 className="home_title">
-            Viaja <br /> Descubre <br /> Explora
-          </h1>
-          <p className="home_description">
-            Descubrí la magia de la región con nosotros, en un viaje donde cada traslado es seguro y lleno de experiencias únicas.
-          </p>
-          <div className="home_reservation">
-            <BookingWidgetHome />
-          </div>
-          <a href="#destination" className="home_button button button_opa-30">
-            Selecciona tu destino
-            <RiArrowRightLine />
-          </a>
-        </div>
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          loop={true}
-          slidesPerView="auto"
-          grabCursor={true}
-          navigation={{
-            nextEl: ".home_swiper .swiper-button-next",
-            prevEl: ".home_swiper .swiper-button-prev",
-          }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          className="home_swiper"
-        >
-          {slides.map((slide, idx) => (
-            <SwiperSlide className="home_article" key={idx}>
-              <Image
-                height={700}
-                width={700}
-                src={slide.src}
-                quality={100}
-                alt={slide.label}
-                className="home_img"
-              />
-            </SwiperSlide>
-          ))}
 
-          <div className="swiper-button-prev">
-            <RiArrowLeftLine size={20} />
-          </div>
-          <div className="swiper-button-next">
-            <RiArrowRightLine size={20} />
-          </div>
-        </Swiper>
+      <Swiper className="home_swiper swiper"
+        modules={[Pagination, EffectFade]}
+        effect="fade"
+        speed={1200}
+        loop={true}
+        pagination={{
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: (index: number, className: string) =>
+            `<span class="${className}">${String(index + 1).padStart(2, "0")}</span>`,
+        }}
+      >
+        {carData.map((car) => (
+          <SwiperSlide key={car.id} className={`home_article swiper-slide car_${car.color}`}>
+            <div className="home_content container">
+              <div className="home_data">
+                <div className="home_titles">
+                  <h3 className="home_subtitle">{car.subtitle}</h3>
+                  <h1 className="home_title">{car.title}</h1>
+                </div>
+      
+                <div className="home_image">
+                  <Image
+                    src={car.image || "/placeholder.svg"}
+                    alt="Car image"
+                    className="home_img"
+                    width={800}
+                    height={400}
+                    priority
+                  />
+                </div>
+              </div>
+      
+              <div className="home_info">
+                <div className="home_specs">
+                  {car.specs.map((spec, index) => (
+                    <span key={index}>{spec}</span>
+                  ))}
+                </div>
+                <a href="#" className="home_button">
+                  <span>Discover More</span>
+                  <RiArrowRightLine />
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      
-      
+      <div className="home_interaction">
+          {/* <!-- Swiper Pagination --> */}
+          <div className="swiper-pagination"></div>
       </div>
     </section>
   )

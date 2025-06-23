@@ -5,6 +5,7 @@ import { RiMapPin2Fill, RiArrowLeftRightLine, RiUser3Line, RiCalendarLine, RiTim
 import DatePicker from "./DatePicker"
 import LocationPicker from "./LocationPicker"
 import TimePicker from "./TimePicker"
+import "@/components/widgets/BookingWidgetHome.css"
 
 import config from "@/config"
 

@@ -1,0 +1,326 @@
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --orange-color: hsl(36, 90%, 54%);
+  --green-color: hsl(166, 90%, 40%);
+  --blue-color: hsl(204, 90%, 50%);
+
+  /*========== Font and typography ==========*/
+  --home-biggest-font-size: 5rem;
+  --home-big-font-size: 2rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --home-biggest-font-size: 15rem;
+    --home-big-font-size: 6rem;
+  }
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.car_orange {
+  --color-car: var(--orange-color);
+}
+
+.car_green {
+  --color-car: var(--green-color);
+}
+
+.car_blue {
+  --color-car: var(--blue-color);
+}
+
+/*=============== HOME ===============*/
+.home_bg,
+.home_blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home_bg {
+  object-fit: cover;
+  object-position: center;
+}
+.home_blur {
+  background-color: var(--opacity-color-20);
+  backdrop-filter: blur(24px);
+  transition: background-color .4s;
+}
+.home_article {
+  position: relative;
+  padding-top: 12rem;
+  width: 100%;
+  height: 100vh;
+}
+.home_panel-1 {
+  width: 100%;
+  height: 40%;
+  background-color: var(--color-car);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.home_panel-2 {
+  width: 100%;
+  height: 60%;
+  background-color: var(--black-color);
+  position: absolute;
+  left: 0;
+  bottom : 0;
+}
+.home_content {
+  position: relative;
+  height: 100%;
+  display: grid;
+  align-content: space-between;
+  z-index: 1;
+}
+.home_data {
+  position: relative;
+}
+.home_titles {
+  color: var(--white-color);
+  width: max-content;
+  margin-inline: auto;
+}
+.home_subtitle {
+  font-size: var(--home-big-font-size);
+  font-family: var(--second-font);
+}
+.home_title {
+  font-weight: var(--font-bold);
+  font-size: var(--home-biggest-font-size);
+}
+.home_img {
+  max-width: initial;
+  width: 400px;
+  position: absolute;
+  left: 0;
+  bottom: -7.5rem;
+  transform: translateX(10rem);
+  opacity: 0;
+  transition: transform .8s .3s, opacity .4s .3s;
+}
+.home_info {
+  padding-bottom: 3rem;
+  text-align: center;
+  display: grid;
+  row-gap: 2rem;
+}
+.home_specs {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--color-car);
+}
+.home_button {
+  display: inline-flex;
+  justify-self: center;
+  align-items: center;
+  column-gap: .5rem;
+  border: 2px solid var(--color-car);
+  padding: .75rem 1.5rem;
+  border-radius: 4rem;
+  color: var(--color-car);
+}
+.home_button span {
+  font-weight: var(--font-semi-bold);
+}
+.home_button i, .home_button svg {
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+.home_button:hover i, .home_button:hover svg {
+  transform: translateX(0.5rem);
+}
+.home_interaction {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.home_social {
+  position: absolute;
+  top: 4rem;
+  left: 1.5rem;
+  display: grid;
+  justify-items: center;
+  row-gap: .75rem;
+  z-index: 10;
+}
+.home_social-link {
+  font-size: 1.25rem;
+  color: var(--black-color);
+}
+.home_social-border {
+  width: 2px;
+  height: 88px;
+  background-color: var(--white-color);
+  margin-bottom: .75rem;
+}
+
+/* Swiper class */
+swiper {
+  height: 100vh;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: 65%;
+  bottom: initial;
+  display: flex;
+  justify-content: center;
+  column-gap: .5rem;
+}
+.swiper-pagination-bullet {
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--white-color);
+  opacity: 1;
+  align-content: center;
+  background: none;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid;
+}
+
+/* Swiper animation */
+.swiper-slide-active .home_img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 330px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home_social {
+    left: .5rem;
+  }
+  .home_title {
+    font-size: 4rem;
+  }
+  .home_img {
+    width: 350px;
+  }
+  .home_specs span {
+    font-size: var(--small-font-size);
+  }
+}
+
+@media screen and (max-width: 350px) and (max-height: 680px) {
+  .swiper, .home_article, .home_interaction {
+    height: 700px;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 450px) {
+  .home_img {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .home_panel-1 {
+    width: 35%;
+    height: 100%;
+  }
+  .home_panel-2 {
+    width: 65%;
+    height: 100%;
+    left: initial;
+    right: 0;
+  }
+  .home_article {
+    padding-top: 4rem;
+  }
+  .home_titles {
+    transform: translateY(-3rem);
+  }
+  .home_subtitle {
+    transform: translateY(3rem);
+  }
+  .home_img {
+    width: 800px;
+    bottom: -7.5rem;
+    transform: translateX(20rem);
+  }
+  .home_info {
+    justify-content: flex-end;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    column-gap: 6rem;
+    padding-bottom: 1rem;
+  }
+  .home_specs {
+    column-gap: 3rem;
+  }
+  .home_interaction {
+    max-width: 1120px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
+  .home_social {
+    top: initial;
+    bottom: 3rem;
+    left: 0;
+    row-gap: 1rem;
+  }
+  .home_social-border {
+    height: 380px;
+    margin-top: 3rem;
+  }
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: initial;
+    height: max-content;
+    left: initial;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+
+/* For taller devices */
+@media screen and (max-width: 1150px) and (min-height: 800px) {
+  .home_content {
+    align-content: space-around;
+    row-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1150px) and (min-height: 800px) {
+  .home_article {
+    padding-top: 7rem;
+  }
+  .home_info {
+    padding-bottom: 3rem;
+  }
+  .home_social {
+    bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1150px) and (min-height: 1000px) {
+  .swiper, .home_article, .home_interaction {
+    height: 900px;
+  }
+}

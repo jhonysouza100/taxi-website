@@ -4,7 +4,7 @@ import { useState } from "react"
 
 const destinations = [
   {
-    src: "/images/cataratas-iguazu-2.jpg",
+    src: "/images/cataratas.webp",
     subtitle: "Pura Naturaleza",
     title: "Cataratas del Iguazú",
     country: "Iguazú",

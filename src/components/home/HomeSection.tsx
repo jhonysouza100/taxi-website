@@ -44,7 +44,7 @@ const carData = [
 export default function HomeSection() {
   return (
     <section className="home" id="home">
-      <Image height={700} width={700} src="/images/gallery-img-2.jpg" alt="Home image" className="home_bg" />
+      <Image height={700} width={700} src="/images/cataratas-iguazu-2.jpg" alt="Home image" className="home_bg" />
       <div className="home_blur"></div>
 
       <Swiper className="home_swiper"

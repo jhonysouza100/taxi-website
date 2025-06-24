@@ -2,10 +2,7 @@
 
 import { useEffect } from "react"
 import ScrollReveal from "scrollreveal"
-
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
+import gsap from "gsap"
 
 export default function useDOMHydration() {
   useEffect(() => {
@@ -91,16 +88,26 @@ export default function useDOMHydration() {
       reset: false,
     })
 
-    sr.reveal(`.home_container, .testimonial_container, .footer_container`)
-    sr.reveal(`.home_title`, { delay: 600 })
-    sr.reveal(`.home_description`, { delay: 900 })
-    sr.reveal(`.home_data .button`, { delay: 1200 })
+    sr.reveal(`.testimonial_container, .footer_container`)
+    // sr.reveal(`.home_title`, { delay: 600 })
+    // sr.reveal(`.home_description`, { delay: 900 })
+    // sr.reveal(`.home_data .button`, { delay: 1200 })
     sr.reveal(`.destination_card, .services_card`, { interval: 100 })
     sr.reveal(`.join_data`, { origin: "left" })
     sr.reveal(`.booking-widget-container`, { origin: "right" })
 
+    // GSAP animations (tl = timeline)
+    const tl = gsap.timeline()
+
+    tl.from(".home_panel-1", { y: -1000, duration: 2 })
+      .from(".home_panel-2", { y: 1000, duration: 2 }, 0)
+      .from(".home_image", { x: 1000, duration: 2 }, 0)
+      .from(".home_text", { y: 100, opacity: 0, delay: 0.5 }, 2)
+      .from(".home_title", { y: 100, opacity: 0, delay: 0.1 }, 2.1)
+  
     // Cleanup function
     return () => {
+      tl.kill()
       window.removeEventListener("scroll", scrollHeader)
       window.removeEventListener("scroll", scrollUp)
       window.removeEventListener("scroll", scrollActive)

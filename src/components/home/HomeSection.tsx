@@ -19,6 +19,7 @@ const carData = [
     title: "TRAVEL",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
     image: "/images/car-a.png",
+    driver: "/images/driver-img-1.png",
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const carData = [
     title: "TRAVEL",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
     image: "/images/car-b.png",
+    driver: "/images/driver-img-1.png",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const carData = [
     title: "TRAVEL",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
     image: "/images/car-c.png",
+    driver: "/images/driver-img-1.png",
   },
 ]
 
@@ -75,6 +78,14 @@ export default function HomeSection() {
                     src={car.image || "/placeholder.svg"}
                     alt="Car image"
                     className="home_img"
+                    width={800}
+                    height={400}
+                    priority
+                  />
+                  <Image
+                    src={car.driver || "/placeholder.svg"}
+                    alt="Driver image"
+                    className="home_img-driver"
                     width={800}
                     height={400}
                     priority

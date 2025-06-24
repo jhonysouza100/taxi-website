@@ -92,6 +92,17 @@
   opacity: 0;
   transition: transform .8s .3s, opacity .4s .3s;
 }
+.home_img-driver {
+  max-width: initial;
+  width: 200px;
+  position: absolute;
+  right: -4rem;
+  bottom: -5.5rem;
+  margin: auto;
+  opacity: 1;
+  /* transition: transform .8s .3s, opacity .4s .3s; */
+  z-index: -1;
+}
 .home_info {
   padding-bottom: 3rem;
   text-align: center;

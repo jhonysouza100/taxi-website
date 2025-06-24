@@ -183,7 +183,7 @@
 }
 
 .update-route-button {
-  background-color: #667eea;
+  background-color: var(--title-color);
   color: white;
   border: none;
   border-radius: 8px;
@@ -195,7 +195,7 @@
 }
 
 .update-route-button:hover {
-  background-color: #5a67d8;
+  background-color: #2563eb;
 }
 
 /* Modal Overlays */

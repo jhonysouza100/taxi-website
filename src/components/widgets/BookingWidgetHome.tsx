@@ -19,8 +19,8 @@ interface BookingData {
 
 export default function BookingWidgetHome() {
   const [bookingData, setBookingData] = useState<BookingData>({
-    from: "Seleccionar origen",
-    to: "Seleccionar destino",
+    from: "",
+    to: "",
     departureDate: new Date(),
     departureTime: "00:00",
     passengers: 1,
@@ -133,7 +133,7 @@ ${config.SITE_URL}`
             <label className="home-location-label">Desde</label>
             <button className="home-location-input" onClick={() => setShowLocationPicker("from")}>
               <RiMapPin2Fill size={16} className="home-location-icon" />
-              <span className="home-location-text">{bookingData.from}</span>
+              <span className="home-location-text">{bookingData.from || "Seleccionar origen"}</span>
             </button>
           </div>
 
@@ -147,7 +147,7 @@ ${config.SITE_URL}`
             <label className="home-location-label">Hasta</label>
             <button className="home-location-input" onClick={() => setShowLocationPicker("to")}>
               <RiMapPin2Fill size={16} className="home-location-icon" />
-              <span className="home-location-text">{bookingData.to}</span>
+              <span className="home-location-text">{bookingData.to || "Seleccionar destino"}</span>
             </button>
           </div>
         </div>

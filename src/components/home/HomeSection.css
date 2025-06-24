@@ -50,12 +50,12 @@
 }
 .home_blur {
   background-color: var(--opacity-color-20);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
   transition: background-color .4s;
 }
 .home_article {
   position: relative;
-  padding-top: 0;
+  padding-top: 8rem;
   width: 100%;
   height: 100vh;
 }
@@ -87,7 +87,7 @@
   width: 400px;
   position: absolute;
   left: 0;
-  bottom: -7.5rem;
+  top: -1.5rem;
   transform: translateX(10rem);
   opacity: 0;
   transition: transform .8s .3s, opacity .4s .3s;
@@ -95,13 +95,13 @@
 .home_img-driver {
   max-width: initial;
   width: 200px;
-  position: absolute;
-  right: -4rem;
-  bottom: -5.5rem;
+  transform: translate(8rem, -12rem);
   margin: auto;
-  opacity: 1;
-  /* transition: transform .8s .3s, opacity .4s .3s; */
-  z-index: -1;
+  opacity: 0;
+  transition: transform .8s .3s, opacity .4s .3s;
+  z-index: 0;
+  --webkkit-mask-image: linear-gradient(black 60%, transparent);
+  mask-image: linear-gradient(black 60%, transparent);
 }
 .home_info {
   padding-bottom: 3rem;
@@ -156,12 +156,24 @@
   row-gap: 2rem;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 .home_button {
   display: inline-flex;
   width: max-content;
   margin-inline: auto;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.home_button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  z-index: -1;
 }
 .home_button span {
   font-weight: var(--font-semi-bold);
@@ -179,7 +191,7 @@
   height: 100vh;
 }
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  top: 50%;
+  top: 4rem;
   bottom: initial;
   display: flex;
   justify-content: center;
@@ -202,6 +214,9 @@
 /* Swiper animation */
 .swiper-slide-active .home_img {
   transform: translateX(0);
+  opacity: 1;
+}
+.swiper-slide-active .home_img-driver {
   opacity: 1;
 }
 
@@ -260,8 +275,12 @@
   }
   .home_img {
     width: 800px;
-    bottom: -7.5rem;
+    top: -8rem;
     transform: translateX(20rem);
+  }
+  .home_img-driver {
+    width: 400px;
+    transform: translate(14rem, -24em);
   }
   .home_info {
     justify-content: flex-end;

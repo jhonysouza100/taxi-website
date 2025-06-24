@@ -6,7 +6,7 @@
 }
 
 .booking-widget-home {
-  background-color: var(--white-color);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 16px;
   padding: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -14,6 +14,17 @@
   flex-wrap: nowrap;
   align-items: stretch;
   gap: 12px;
+  position: relative;
+}
+.booking-widget-home::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  z-index: -1;
 }
 
 .home-fields-container {
@@ -22,7 +33,7 @@
   column-gap: 1rem;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1080px) {
   .booking-widget-home {
     flex-wrap: wrap;
   }
@@ -46,9 +57,9 @@
 
 .home-location-label {
   font-size: 12px;
-  color: var(--text-color);
+  color: var(--white-color);
   margin-bottom: 4px;
-  font-weight: 500;
+  font-weight: var(--font-semi-bold);
 }
 
 .home-location-input {
@@ -87,7 +98,7 @@
 .home-swap-btn {
   color: var(--text-color);
   cursor: pointer;
-  background-color: var(--white-color);
+  background-color: transparent;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -95,11 +106,6 @@
   margin-top: 1rem;
   transition: all .2s;
   display: flex;
-}
-
-.home-swap-btn:hover {
-  background-color: #f3f4f6;
-  border-color: #d1d5db;
 }
 
 /* Date Fields */
@@ -209,7 +215,7 @@
 
 /* Update Route Button */
 .home-update-route-btn {
-  background-color: #3b82f6;
+  background-color: var(--title-color);
   color: var(--white-color);
   border: none;
   border-radius: 8px;

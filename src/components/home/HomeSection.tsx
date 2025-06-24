@@ -15,28 +15,28 @@ const carData = [
   {
     id: 1,
     color: "orange",
-    subtitle: "Let's",
-    title: "TRAVEL",
+    subtitle: "Puerto",
+    title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
-    image: "/images/car-a.png",
-    driver: "/images/driver-img-1.png",
+    image: "/images/car-b.png",
+    driver: "/images/driver-img-2.png",
   },
   {
     id: 2,
     color: "green",
-    subtitle: "Let's",
-    title: "TRAVEL",
+    subtitle: "Puerto",
+    title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
-    image: "/images/car-b.png",
-    driver: "/images/driver-img-1.png",
+    image: "/images/car-c.png",
+    driver: "/images/driver-img-3.png",
   },
   {
     id: 3,
     color: "blue",
-    subtitle: "Let's",
-    title: "TRAVEL",
+    subtitle: "Puerto",
+    title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
-    image: "/images/car-c.png",
+    image: "/images/car-a.png",
     driver: "/images/driver-img-1.png",
   },
 ]
@@ -75,17 +75,16 @@ export default function HomeSection() {
       
                 <div className="home_image">
                   <Image
-                    src={car.image || "/placeholder.svg"}
-                    alt="Car image"
-                    className="home_img"
-                    width={800}
-                    height={400}
-                    priority
-                  />
-                  <Image
                     src={car.driver || "/placeholder.svg"}
                     alt="Driver image"
                     className="home_img-driver"
+                    width={800}
+                    height={400}
+                  />
+                  <Image
+                    src={car.image || "/placeholder.svg"}
+                    alt="Car image"
+                    className="home_img"
                     width={800}
                     height={400}
                     priority

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { RiApps2Fill, RiCloseLine } from "@remixicon/react"
+import { RiCloseLine, RiMenuUnfold2Fill } from "@remixicon/react"
 
 const navLinks = [
   { href: "#home", label: "Inicio" },
@@ -41,7 +41,7 @@ export default function Header() {
 
         <div className="nav_buttons">
           <div className="nav_toggle" id="nav-toggle">
-            <RiApps2Fill />
+            <RiMenuUnfold2Fill />
           </div>
         </div>
       </nav>

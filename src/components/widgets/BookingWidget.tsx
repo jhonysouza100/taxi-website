@@ -19,8 +19,8 @@ interface BookingData {
 
 export default function BookingWidget() {
   const [bookingData, setBookingData] = useState<BookingData>({
-    from: "Seleccionar origen",
-    to: "Seleccionar destino",
+    from: "",
+    to: "",
     departureDate: new Date(),
     departureTime: "00:00",
     passengers: 1,

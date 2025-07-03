@@ -286,6 +286,7 @@ img {
 }
 .destination_img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   transition: transform .4s;
 }
@@ -499,16 +500,20 @@ img {
 }
 .footer_logo {
   display: inline-flex;
+  color: var(--white-color);
   align-items: center;
   column-gap: .25rem;
   justify-self: flex-start;
-  color: var(--white-color);
   font-size: var(--h3-font-size);
   width: 24px;
   font-weight: var(--font-semi-bold);
 }
+.footer_description {
+  color: var(--white-color);
+  margin-block: 2rem;
+}
 .footer_content {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(1, max-content);
   gap: 3rem;
 }
 .footer_title {
@@ -522,6 +527,10 @@ img {
 }
 .footer_link {
   color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .5rem;
 }
 .footer_social {
   display: flex;
@@ -544,7 +553,7 @@ img {
 }
 .footer_author {
   text-decoration: none;
-  color: rgb(29, 104, 179);
+  color: rgb(41, 138, 236);
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -611,7 +620,7 @@ img {
     justify-content: center;
   }
   .footer_content {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(2, max-content);
   }
 }
 
@@ -621,7 +630,7 @@ img {
     grid-template-columns: repeat(2, 300px);
   }
   .footer_content {
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(3, max-content);
   }
 }
 
@@ -729,6 +738,7 @@ img {
     align-self: flex-start;
   }
   .footer_content {
+    grid-template-columns: repeat(4, max-content);
     column-gap: 4.5rem;
   }
   .footer_title {

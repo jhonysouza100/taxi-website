@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     siteName: "Traslados Puerto Iguazú",
     images: [{
       url: `${siteUrl}/images/og-image.jpg`,
-      width: 1200,
-      height: 630,
+      width: 320,
+      height: 320,
       alt: "Traslados en Puerto Iguazú"
     }],
   },

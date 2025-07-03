@@ -1,0 +1,238 @@
+/*=============== BOOKING WIDGET HOME ===============*/
+.booking-widget-hero-container {
+  display: inline-flex;
+  width: max-content;
+  margin-inline: auto;
+
+}
+
+.booking-widget-hero {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.booking-widget-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  z-index: -1;
+  border-radius: 16px;
+}
+
+.hero-fields-container {
+  width: 100%;
+  display: flex;
+  column-gap: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .booking-widget-hero {
+    flex-wrap: wrap;
+  }
+  .booking-widget-hero-container {
+    width: min-content;
+  }
+  .location-container {
+    column-gap: 0;
+  }
+  .hero-location-input {
+    max-width: 120px !important;
+  }
+}
+
+/* Location Fields */
+.hero-location-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.hero-location-label {
+  font-size: 12px;
+  color: var(--white-color);
+  margin-bottom: 4px;
+  font-weight: var(--font-semi-bold);
+}
+
+.hero-location-input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  min-height: 48px;
+  max-width: 160px;
+}
+
+.hero-location-input:hover {
+  border-color: #d1d5db;
+}
+
+.hero-location-input svg {
+  color: var(--text-color);
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.hero-location-text {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Swap Button */
+.hero-swap-btn {
+  color: var(--white-color);
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  margin-top: 1rem;
+  transition: all .2s;
+  display: flex;
+}
+
+/* Date Fields */
+.hero-date-input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  min-width: 120px;
+  gap: 8px;
+  flex: 1;
+}
+
+.hero-date-input.departure {
+  border-color: #ef4444;
+}
+
+.hero-date-input.return {
+  border-color: #e5e7eb;
+}
+
+.hero-date-input:hover {
+  border-color: #d1d5db;
+}
+
+.hero-date-input.departure:hover {
+  border-color: #dc2626;
+}
+
+.hero-date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-date-label {
+  font-size: 12px;
+  color: var(--text-color);
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.hero-date-value {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Passenger Section */
+.hero-passenger-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 6px;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.hero-passenger-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-passenger-btn:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.hero-passenger-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hero-passenger-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-color);
+}
+
+.hero-passenger-count {
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Update Route Button */
+.hero-update-route-btn {
+  background-color: var(--title-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 6px;
+  min-width: 120px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  flex: 1;
+  flex-shrink: 0;
+}
+
+.hero-update-route-btn:hover {
+  background-color: #2563eb;
+}

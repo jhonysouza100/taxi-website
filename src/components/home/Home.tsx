@@ -1,7 +1,7 @@
 import Footer from "../Footer"
 import ScrollUp from "../ScrollUp"
 import Header from "../Header"
-import HomeSection from "./HomeSection"
+import HeroSection from "./HeroSection"
 import DestinationSection from "./DestinationSection"
 import TestimonialSection from "./TestimonialSection"
 import JoinSection from "./JoinSection"
@@ -19,7 +19,7 @@ export default function Home() {
       {/*==================== MAIN ====================*/}
       <main className="main">
         {/*==================== HOME ====================*/}
-        <HomeSection />
+        <HeroSection />
 
         {/*==================== DESTINATION ====================*/}
         <DestinationSection />

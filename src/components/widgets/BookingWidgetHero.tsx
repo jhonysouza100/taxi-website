@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { RiMapPin2Fill, RiArrowUpDownLine, RiUser3Line, RiCalendarLine, RiTimeLine } from "@remixicon/react"
+import { RiMapPin2Fill, RiArrowLeftRightLine, RiUser3Line, RiCalendarLine, RiTimeLine } from "@remixicon/react"
 import DatePicker from "./DatePicker"
 import LocationPicker from "./LocationPicker"
 import TimePicker from "./TimePicker"
-import "@/components/widgets/BookingWidget.css"
+import "@/components/widgets/BookingWidgetHero.css"
 
 import config from "@/config"
 
@@ -17,7 +17,7 @@ interface BookingData {
   passengers: number
 }
 
-export default function BookingWidget() {
+export default function BookingWidgetHero() {
   const [bookingData, setBookingData] = useState<BookingData>({
     from: "",
     to: "",
@@ -26,7 +26,7 @@ export default function BookingWidget() {
     passengers: 1,
   })
 
-  const [showDatePicker, setShowDatePicker] = useState<"departure" | "return" | null>(null)
+  const [showDatePicker, setShowDatePicker] = useState<"departure" | null>(null)
   const [showLocationPicker, setShowLocationPicker] = useState<"from" | "to" | null>(null)
   const [showTimePicker, setShowTimePicker] = useState(false)
 
@@ -50,10 +50,10 @@ export default function BookingWidget() {
     setShowLocationPicker(null)
   }
 
-  const handleDateSelect = (date: Date, type: "departure" | "return") => {
+  const handleDateSelect = (date: Date) => {
     setBookingData((prev) => ({
       ...prev,
-      [type === "departure" ? "departureDate" : "returnDate"]: date,
+      departureDate: date,
     }))
     setShowDatePicker(null)
   }
@@ -105,7 +105,7 @@ export default function BookingWidget() {
       return
     }
 
-    const message = `🚖 *RESERVA DE TRASLADO*
+    const message = `🚖 *RESERVA DE TAXI*
 
 📍 *Origen:* ${from}
 📍 *Destino:* ${to}
@@ -119,70 +119,76 @@ ${config.SITE_URL}`
 
     const phoneNumber = config.PHONE_NUMBER
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
 
     window.open(whatsappUrl, "_blank")
   }
 
   return (
-    <div className="booking-widget-container">
-      <div className="booking-widget-card">
-        {/* Location Fields */}
-        <div className="location-fields">
-          <div className="location-field">
-            <label className="location-label">Desde</label>
-            <button className="location-input" onClick={() => setShowLocationPicker("from")}>
-              <RiMapPin2Fill size={16} className="location-icon" />
-              <span className="location-text">{bookingData.from || "Seleccionar origen"}</span>
+    <div className="booking-widget-hero-container">
+      <div className="booking-widget-hero">
+        {/* From Location */}
+        <div className="hero-fields-container location-container">
+          <div className="hero-location-field">
+            <label className="hero-location-label">Desde</label>
+            <button className="hero-location-input" onClick={() => setShowLocationPicker("from")}>
+              <RiMapPin2Fill size={16} className="hero-location-icon" />
+              <span className="hero-location-text">{bookingData.from || "Seleccionar origen"}</span>
             </button>
           </div>
 
-          <button className="swap-locations-btn" onClick={swapLocations} aria-label="Intercambiar origen y destino">
-            <RiArrowUpDownLine size={20} />
+          {/* Swap Button */}
+          <button className="hero-swap-btn" onClick={swapLocations} aria-label="Intercambiar origen y destino">
+            <RiArrowLeftRightLine size={20} />
           </button>
 
-          <div className="location-field">
-            <label className="location-label">Hasta</label>
-            <button className="location-input" onClick={() => setShowLocationPicker("to")}>
-              <RiMapPin2Fill size={16} className="location-icon" />
-              <span className="location-text">{bookingData.to || "Seleccionar destino"}</span>
+          {/* To Location */}
+          <div className="hero-location-field">
+            <label className="hero-location-label">Hasta</label>
+            <button className="hero-location-input" onClick={() => setShowLocationPicker("to")}>
+              <RiMapPin2Fill size={16} className="hero-location-icon" />
+              <span className="hero-location-text">{bookingData.to || "Seleccionar destino"}</span>
             </button>
           </div>
         </div>
 
-        {/* Date and Time Fields */}
-        <div className="date-time-fields">
-          <button className="date-input departure-date" onClick={() => setShowDatePicker("departure")}>
+        {/* Departure Date */}
+        <div className="hero-fields-container">
+          {/* Return Date */}
+          <button className="hero-date-input departure" onClick={() => setShowDatePicker("departure")}>
             <RiCalendarLine size={20} />
-            <div className="date-content">
-              <span className="date-label">Fecha</span>
-              <span className="date-value">{formatDate(bookingData.departureDate) || "Seleccionar"}</span>
+            <div className="hero-date-content">
+              <span className="hero-date-label">Fecha</span>
+              <span className="hero-date-value">{formatDate(bookingData.departureDate) || "Seleccionar"}</span>
             </div>
           </button>
 
-          <button className="time-input" onClick={() => setShowTimePicker(true)}>
+          {/* Return Time */}
+          <button className="hero-date-input return" onClick={() => setShowTimePicker(true)}>
             <RiTimeLine size={20} />
-            <div className="time-content">
-              <span className="time-label">Hora</span>
-              <span className="time-value">{bookingData.departureTime || "Seleccionar"}</span>
+            <div className="hero-date-content">
+              <span className="hero-date-label">Hora</span>
+              <span className="hero-date-value">{bookingData.departureTime || "Seleccionar"}</span>
             </div>
           </button>
         </div>
 
-        {/* Bottom Section */}
-        <div className="bottom-section">
-          <div className="passenger-controls">
+        <div className="hero-fields-container">
+          {/* Passengers */}
+          <div className="hero-passenger-section">
             <button
-              className="passenger-btn"
+              className="hero-passenger-btn"
               onClick={() => handlePassengerChange(false)}
               disabled={bookingData.passengers <= 1}
             >
               -
             </button>
-            <RiUser3Line size={16} />
-            <span className="passenger-count">{bookingData.passengers}</span>
+            <div className="hero-passenger-display">
+              <RiUser3Line size={16} />
+              <span className="hero-passenger-count">{bookingData.passengers}</span>
+            </div>
             <button
-              className="passenger-btn"
+              className="hero-passenger-btn"
               onClick={() => handlePassengerChange(true)}
               disabled={bookingData.passengers >= 8}
             >
@@ -190,9 +196,11 @@ ${config.SITE_URL}`
             </button>
           </div>
 
-          <button className="update-route-button" onClick={sendWhatsAppMessage}>
+          {/* Send Button */}
+          <button className="hero-update-route-btn" onClick={sendWhatsAppMessage}>
             Reservar
           </button>
+
         </div>
       </div>
 
@@ -208,7 +216,7 @@ ${config.SITE_URL}`
 
       {showDatePicker && (
         <DatePicker
-          onSelect={(date) => handleDateSelect(date, showDatePicker)}
+          onSelect={handleDateSelect}
           onClose={() => setShowDatePicker(null)}
           title="Fecha de salida"
           selectedDate={bookingData.departureDate}

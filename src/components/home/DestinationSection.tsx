@@ -4,49 +4,49 @@ import { useState } from "react"
 
 const destinations = [
   {
-    src: "/images/cataratas.webp",
+    src: "/images/cataratas-iguazu.webp",
     subtitle: "Pura Naturaleza",
     title: "Cataratas del Iguazú",
     country: "Iguazú",
     alt: "Destination image 1",
   },
   {
-    src: "/images/san-ignacio.jpg",
+    src: "/images/ruinas-sanignacio.webp",
     subtitle: "Arquitectura Histórica",
     title: "Ruinas de San Ignacio",
     country: "Wanda",
     alt: "Destination image 1",
   },
   {
-    src: "/images/duty-free-shop-iguazu.jpg",
+    src: "/images/dutyfree-iguazu.webp",
     subtitle: "Compras",
     title: "DUTY FREE",
     country: "Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/cellshop.jpg",
+    src: "/images/ciudad-del-este.avif",
     subtitle: "Paseo de Compras",
     title: "PARAGUAY",
     country: "Ciudad del Este",
     alt: "Destination image 3",
   },
   {
-    src: "/images/aeropuerto-iguazu.jpg",
+    src: "/images/aeropuerto-iguazu.webp",
     subtitle: "Translados",
     title: "Aeropuerto",
     country: "Puerto Iguazú / Foz de Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/aripuca-iguazu.jpg",
+    src: "/images/aripuca-iguazu.webp",
     subtitle: "Cultura y Conciencia Ambiental",
     title: "LA ARIPUCA",
     country: "Iguazú",
     alt: "Destination image 2",
   },
   {
-    src: "/images/minas-wanda.jpg",
+    src: "/images/minas-wanda.webp",
     subtitle: "Formaciones Naturales",
     title: "MINAS DE WANDA",
     country: "Wanda",
@@ -60,77 +60,77 @@ const destinations = [
     alt: "Destination image 3",
   },
   {
-    src: "/images/hito-3-fronteras-dia.jpg",
+    src: "/images/hito-3-fronteras-dia.webp",
     subtitle: "Encuentro de Culturas",
     title: "HITO 3 FRONTERAS",
     country: "Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/represa-de-itaipu.jpg",
+    src: "/images/represa-itaipu.webp",
     subtitle: "Turismo Sustentable",
     title: "Represa de Itaipú",
     country: "Brasil",
     alt: "Destination image 3",
   },
   {
-    src: "/images/yup-star.png",
+    src: "/images/yup-star.webp",
     subtitle: "Vuelta al Mundo",
     title: "Rueda Gigante",
     country: "Foz de Iguazú - Brasil",
     alt: "Destination image 3",
   },
   {
-    src: "/images/saltos-del-mocona-misiones.jpg",
+    src: "/images/saltos-del-mocona.webp",
     subtitle: "Paseo Náutico",
     title: "Saltos del Moconá",
     country: "Río Uruguay - El Soberbio",
     alt: "Destination image 3",
   },
   {
-    src: "/images/saltos-del-monday.jpg",
+    src: "/images/saltos-del-monday.webp",
     subtitle: "Turismo Aventura",
     title: "Saltos del Monday",
     country: "Ciudad del Este",
     alt: "Destination image 3",
   },
   {
-    src: "/images/arroyo-mbocay.jpg",
+    src: "/images/arroyo-mbocay.webp",
     subtitle: "Tesoro Escondido",
     title: "Arroyo M´bocay",
     country: "2000 Hectáreas - Puerto Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/cabalgata-ecologica.jpg",
+    src: "/images/cabalgata-ecologica.webp",
     subtitle: "Paseo a Caballo",
     title: "Cabalgata Ecológica",
     country: "Puerto Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/guira-oga.jpg",
+    src: "/images/guira-oga.webp",
     subtitle: "Ecoturismo",
     title: "GÜIRÁOGA",
     country: "Puerto Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/icebar-iguazu.jpg",
+    src: "/images/icebar-iguazu.webp",
     subtitle: "Bar de Hielo",
     title: "ICE BAR",
     country: "Puerto Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/museo-de-cera.jpg",
+    src: "/images/museo-de-cera.webp",
     subtitle: "Meseo de Cera",
     title: "DREAMLAND",
     country: "Foz de Iguazú",
     alt: "Destination image 3",
   },
   {
-    src: "/images/rafain-cena-show.jpg",
+    src: "/images/rafain-cena-show.webp",
     subtitle: "Sabores e Culturas",
     title: "Rafain Churrascaria Show",
     country: "Foz de Iguazú",
@@ -154,8 +154,8 @@ export default function DestinationSection() {
         {firstThreeDestinations && firstThreeDestinations.map((dest, idx) => (
           <article className="destination_card" key={idx}>
             <Image
-              height={700}
-              width={700}
+              height={300}
+              width={300}
               src={dest.src}
               quality={100}
               loading="lazy"

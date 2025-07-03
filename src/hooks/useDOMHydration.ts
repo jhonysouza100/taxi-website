@@ -89,9 +89,9 @@ export default function useDOMHydration() {
     })
 
     sr.reveal(`.testimonial_container, .footer_container`)
-    // sr.reveal(`.home_title`, { delay: 600 })
-    // sr.reveal(`.home_description`, { delay: 900 })
-    // sr.reveal(`.home_data .button`, { delay: 1200 })
+    // sr.reveal(`.hero_title`, { delay: 600 })
+    // sr.reveal(`.hero_description`, { delay: 900 })
+    // sr.reveal(`.hero_data .button`, { delay: 1200 })
     sr.reveal(`.destination_card, .services_card`, { interval: 100 })
     sr.reveal(`.join_data`, { origin: "left" })
     sr.reveal(`.booking-widget-container`, { origin: "right" })
@@ -99,11 +99,9 @@ export default function useDOMHydration() {
     // GSAP animations (tl = timeline)
     const tl = gsap.timeline()
 
-    tl.from(".home_panel-1", { y: -1000, duration: 2 })
-      .from(".home_panel-2", { y: 1000, duration: 2 }, 0)
-      .from(".home_image", { x: 1000, duration: 2 }, 0)
-      .from(".home_text", { y: 100, opacity: 0, delay: 0.5 }, 2)
-      .from(".home_title", { y: 100, opacity: 0, delay: 0.1 }, 2.1)
+    tl.from(".hero_image", { x: 1000, duration: 2 }, 0)
+      .from(".hero_text", { y: 100, opacity: 0, delay: 0.5 }, 2)
+      .from(".hero_title", { y: 100, opacity: 0, delay: 0.1 }, 2.1)
   
     // Cleanup function
     return () => {

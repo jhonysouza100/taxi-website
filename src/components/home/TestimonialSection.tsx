@@ -45,7 +45,7 @@ export default function TestimonialSection() {
           <Image
             height={700}
             width={700}
-            src="/images/testimonial-img.jpg"
+            src="/images/testimonial-img.webp"
             quality={100}
             loading="lazy"
             alt="Testimonial image"

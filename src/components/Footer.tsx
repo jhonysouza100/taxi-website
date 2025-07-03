@@ -1,35 +1,25 @@
 import Image from "next/image"
-import { RiCalendarLine, RiFacebookCircleFill, RiFlashlightLine, RiInstagramFill, RiMailLine, RiMapPinLine, RiPhoneLine, RiSparkling2Line, RiTimeLine, RiTwitterXFill, RiWhatsappLine } from "@remixicon/react"
+import { RiFacebookCircleFill, RiInstagramFill, RiTwitterXFill } from "@remixicon/react"
 
 import config from "@/config"
-import { ReactNode } from "react";
 
-type FooterLink = 
-  | { label: string; icon: ReactNode; href?: undefined }
-  | { label: string; href: string; icon?: undefined }
-
-type FooterLinkGroup = {
-  title: string
-  links: FooterLink[]
-}
-
-const footerLinkGroups: FooterLinkGroup[] = [
+const footerLinkGroups = [
   {
     title: "Contacto",
     links: [
-      { label: "+54 3757 123-456", icon: <RiPhoneLine /> },
-      { label: "+54 3757 123-456", icon: <RiWhatsappLine /> },
-      { label: "info@taxipuertoiguazu.com", icon: <RiMailLine /> },
-      { label: "Puerto Iguazú, Misiones, Argentina", icon: <RiMapPinLine /> },
+      { label: "+54 3757 123-456", href: "#" },
+      { label: "info@taxipuertoiguazu.com", href: "#" },
+      { label: "Puerto Iguazú, Misiones, Argentina", href: "#" },
     ],
   },
   {
-    title: "Horarios",
+    title: "Más Información",
     links: [
-      { label: "Servicio 24/7", icon: <RiTimeLine /> },
-      { label: "Disponible todos los días", icon: <RiSparkling2Line /> },
-      { label: "Respuesta inmediata", icon: <RiFlashlightLine /> },
-      { label: "Reservas anticipadas", icon: <RiCalendarLine /> },
+      { label: "Parque Nacional Iguazú", href: "https://iguazuargentina.com/es/" },
+      { label: "Parque Nacional do Iguazú (Brasil)", href: "https://cataratasdoiguacu.com.br/" },
+      { label: "Documentación para ingresar a Brasil (DNM)", href: "https://www.argentina.gob.ar/aplicaciones/fronteras/recomendaciones/brasil" },
+      { label: "Aeropuerto Iguazú", href: "https://www.aa2000.com.ar/iguazu" },
+      { label: "Paseo de luna llena en las Cataratas del Iguazú", href: "https://iguazuargentina.com/tickets/es/luna.html" },
     ],
   },
   {
@@ -61,13 +51,10 @@ export default function Footer() {
               <h3 className="footer_title">{group.title}</h3>
               <ul className="footer_links">
                 {group.links.map((link, idx) => (
-                  <li key={idx} className="footer_link">
-                    <span className="footer_icon">
-                      {link.icon}
-                    </span>
-                    <span>
+                  <li key={idx}>
+                    <a className="footer_link" href={link.href} target="_blank">
                       {link.label}
-                    </span>
+                    </a>
                   </li>
                 ))}
               </ul>

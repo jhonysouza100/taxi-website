@@ -43,7 +43,7 @@ const carData = [
 
 export default function HeroSection() {
   return (
-    <div className="home" id="home">
+    <section className="home" id="home">
       <Image height={750} width={320} quality={80} src="/images/bg-img-1.webp" alt="Home image" className="hero_bg" />
       <div className="hero_blur"></div>
 
@@ -121,6 +121,6 @@ export default function HeroSection() {
         </a>
       </div>
 
-    </div>
+    </section>
   )
 }

@@ -4,6 +4,7 @@ export default function ServicesSection() {
   return (
     <section className="services section" id="services">
       <h2 className="section_title">Nuestros Servicios</h2>
+      <p className="section_description">Te llevamos a donde necesites, ofrecemos traslados a puntos turísticos, alojamientos, aeropuerto y mas.</p>
       <div className="services_container container grid">
         <article className="services_card">
           <div className="services_icon">
@@ -11,7 +12,7 @@ export default function ServicesSection() {
           </div>
           <h3 className="services_title">Puntos Turísticos</h3>
           <p className="services_description">
-            Explorá Cataratas del Iguazú, el Hito Tres Fronteras y rincones únicos con absoluta comodidad.
+            Explorá los destinos más importantes y emblemáticos de la región. Te ofrecemos un traslado flexible para que puedas recorrer y disfrutar sin preocuparte por el tiempo.
           </p>
         </article>
 

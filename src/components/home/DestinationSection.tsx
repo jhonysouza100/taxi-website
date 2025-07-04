@@ -188,8 +188,8 @@ export default function DestinationSection() {
                   className="destination_dropdown"
                   style={{ fontSize: "var(--h2-font-size)", fontWeight: 600, }}>
                   {showAll
-                    ? "Ver"
-                    : `Ver`}
+                    ? "Mostar"
+                    : `Mostar`}
                 </span>
                 {showAll ? (
                   <RiSubtractFill size={28} />

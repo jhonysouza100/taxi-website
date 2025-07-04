@@ -14,7 +14,6 @@ import BookingWidgetHero from "../widgets/BookingWidgetHero"
 const carData = [
   {
     id: 1,
-    color: "orange",
     subtitle: "Puerto",
     title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
@@ -23,7 +22,6 @@ const carData = [
   },
   {
     id: 2,
-    color: "green",
     subtitle: "Puerto",
     title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
@@ -32,7 +30,6 @@ const carData = [
   },
   {
     id: 3,
-    color: "blue",
     subtitle: "Puerto",
     title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
@@ -44,7 +41,7 @@ const carData = [
 export default function HeroSection() {
   return (
     <section className="home" id="home">
-      <Image height={750} width={320} quality={80} src="/images/bg-img-1.webp" alt="Home image" className="hero_bg" />
+      <Image height={750} width={320} quality={80} src="/images/bg-img-2.webp" alt="Home image" className="hero_bg" />
       <div className="hero_blur"></div>
 
       <Swiper className="hero_swiper"
@@ -65,7 +62,7 @@ export default function HeroSection() {
         }}
       >
         {carData.map((car) => (
-          <SwiperSlide key={car.id} className={`hero_article swiper-slide car_${car.color}`}>
+          <SwiperSlide key={car.id} className={`hero_article swiper-slide`}>
             <div className="hero_content container">
               <div className="hero_data">
                 <div className="hero_text">

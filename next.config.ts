@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: false,
   images: {
-    unoptimized: true, // se desactiva la optimización, permitiendo cualquier URL
+    // unoptimized: true, // se desactiva la optimización, permitiendo cualquier URL
     remotePatterns: [
       {
         protocol: 'https',

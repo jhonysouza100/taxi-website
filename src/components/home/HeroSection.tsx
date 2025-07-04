@@ -17,8 +17,8 @@ const carData = [
     subtitle: "Puerto",
     title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
-    image: "/images/car-2.webp",
-    driver: "/images/driver-1.webp",
+    image: "/images/car-1.webp",
+    driver: "/images/driver-3.webp",
   },
   {
     id: 2,
@@ -33,8 +33,8 @@ const carData = [
     subtitle: "Puerto",
     title: "IGUAZÚ",
     specs: ["302 MPH", "0 - 100 KM/H", "360 KW"],
-    image: "/images/car-1.webp",
-    driver: "/images/driver-3.webp",
+    image: "/images/car-2.webp",
+    driver: "/images/driver-1.webp",
   },
 ]
 

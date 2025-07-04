@@ -36,7 +36,8 @@
   column-gap: 1rem;
 }
 
-@media screen and (max-width: 1080px) {
+
+@media screen and (max-width: 1023px) {
   .booking-widget-hero {
     flex-wrap: wrap;
   }

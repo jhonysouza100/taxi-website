@@ -26,6 +26,8 @@ ENV NEXT_PUBLIC_SITE_VERIFICATION=$NEXT_PUBLIC_SITE_VERIFICATION
 
 ENV NODE_ENV=production
 
+RUN npm run build
+
 EXPOSE 3000
 
-CMD npm run deploy
+CMD ["npm", "start"]
